@@ -7,7 +7,8 @@ import Profile from "./profile";
 
 function Main() {
   const { isAuthenticated } = useAuth0();
-  if (!isAuthenticated) {
+
+  if (!isAuthenticated && localStorage.getItem("user") == null) {
     return <Login></Login>;
   } else {
     return (
